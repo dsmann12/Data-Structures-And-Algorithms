@@ -1,11 +1,13 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include "linked_list.h"
+
 class QueueEmpty : std::runtime_error {
 	public:
 		QueueEmpty(const std::string& err) :
 			std::runtime_error(err) {}
-}
+};
 
 // queue
 template <typename E>
@@ -44,12 +46,12 @@ const E& Queue<E>::front() const {
 }
 
 template <typename E>
-int size() const {
+int Queue<E>::size() const {
 	return size_;
 }
 
 template <typename E>
-bool empty() const {
+bool Queue<E>::empty() const {
 	return size_ == 0;
 }
 
